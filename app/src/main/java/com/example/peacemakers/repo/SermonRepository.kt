@@ -37,7 +37,6 @@ class SermonRepository {
         }catch (t:Throwable){
             //Display error when data is not available or there is an error
             _status.value = SermonStatus.ERROR
-            Timber.i("Error Occured")
             _sermonresponse.value = ArrayList()
         }
     }

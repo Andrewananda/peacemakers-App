@@ -6,7 +6,7 @@ import androidx.databinding.BindingAdapter
 import com.example.peacemakers.repo.SermonStatus
 
 @BindingAdapter("ApiStatus")
-fun displayStatus(statusImageView: ImageView, status: SermonStatus) {
+fun displayStatus(statusImageView: ImageView, status: SermonStatus?) {
     when(status) {
         SermonStatus.LOADING->{
             statusImageView.visibility = View.VISIBLE
