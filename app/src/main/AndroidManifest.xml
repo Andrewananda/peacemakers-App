@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.ApplicationController"></activity>
+        <activity android:name=".views.DetailSermon"></activity>
+        <activity android:name=".views.ApplicationController" />
         <activity android:name=".views.MainActivity" />
         <activity
             android:name=".views.SplashScreen"

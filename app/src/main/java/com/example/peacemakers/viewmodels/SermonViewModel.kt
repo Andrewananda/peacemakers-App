@@ -1,6 +1,7 @@
 package com.example.peacemakers.viewmodels
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.peacemakers.models.Sermon
 import com.example.peacemakers.repo.SermonRepository
@@ -14,6 +15,10 @@ import timber.log.Timber
 class SermonViewModel : ViewModel() {
     //initialize sermonRepository
     private val sermonRepository:SermonRepository = SermonRepository()
+    //Navigate to selected Sermon
+    private val _navigateToSelectedSermon = MutableLiveData<Int>()
+    val navigateToSelectedSermon : LiveData<Int>
+    get() = _navigateToSelectedSermon
     //get Response from api
     val response: LiveData<List<Sermon>>
     //get Status
@@ -36,5 +41,13 @@ class SermonViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         job.cancel()
+    }
+
+    fun navigateToSelectedSermon(sermonId:Int){
+        _navigateToSelectedSermon.value = sermonId
+    }
+
+    fun displaySermonDetailComplete() {
+        _navigateToSelectedSermon.value = null
     }
 }

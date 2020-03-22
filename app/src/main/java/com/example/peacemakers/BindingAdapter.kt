@@ -10,7 +10,7 @@ fun displayStatus(statusImageView: ImageView, status: SermonStatus?) {
     when(status) {
         SermonStatus.LOADING->{
             statusImageView.visibility = View.VISIBLE
-            statusImageView.setImageResource(R.drawable.loading_animation)
+            statusImageView.setImageResource(R.drawable.loading_image)
         }
         SermonStatus.ERROR->{
             statusImageView.visibility = View.VISIBLE

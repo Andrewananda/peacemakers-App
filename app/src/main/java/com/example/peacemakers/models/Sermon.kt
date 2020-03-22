@@ -1,9 +1,7 @@
 package com.example.peacemakers.models
 
 import android.os.Parcelable
-import androidx.annotation.Nullable
 import kotlinx.android.parcel.Parcelize
-import kotlin.reflect.jvm.internal.impl.resolve.constants.NullValue
 
 @Parcelize
 data class Sermon(

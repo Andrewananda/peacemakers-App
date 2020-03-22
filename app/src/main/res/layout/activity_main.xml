@@ -23,10 +23,11 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
         <ImageView
+            android:id="@+id/image_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:ApiStatus="@{viewmodel.status}"
-            />
+            android:contentDescription="Description" />
 
     </LinearLayout>
 </layout>

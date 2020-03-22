@@ -8,11 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.peacemakers.databinding.SermonItemBinding
 import com.example.peacemakers.models.Sermon
 
-class SermonAdapter : ListAdapter<Sermon,SermonAdapter.SermonViewHolder>(SermonDiffUtil) {
+class SermonAdapter(val clickListener:SermonClickListener) : ListAdapter<Sermon,SermonAdapter.SermonViewHolder>(SermonDiffUtil) {
 
     inner class SermonViewHolder(val binding:SermonItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val title = binding.sermonTitle
-        val description = binding.sermonDescription
+        fun bind(item: Sermon){
+            binding.sermonTitle.text = item.title
+            binding.sermonDescription.text = item.description
+            binding.sermonBy.text = item.sermon_by
+            binding.executePendingBindings()
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SermonViewHolder {
@@ -21,9 +26,10 @@ class SermonAdapter : ListAdapter<Sermon,SermonAdapter.SermonViewHolder>(SermonD
 
     override fun onBindViewHolder(holder: SermonViewHolder, position: Int) {
         val item = getItem(position)
-        holder.title.text = item.title
-        holder.description.text = item.description
-
+        holder.itemView.setOnClickListener {
+            clickListener.onClick(item)
+        }
+        holder.bind(item)
     }
 
     companion object SermonDiffUtil:DiffUtil.ItemCallback<Sermon>(){
@@ -34,7 +40,10 @@ class SermonAdapter : ListAdapter<Sermon,SermonAdapter.SermonViewHolder>(SermonD
         override fun areContentsTheSame(oldItem: Sermon, newItem: Sermon): Boolean {
             return oldItem.id == newItem.id
         }
-
     }
 
+}
+
+class SermonClickListener(val clickListener: (sermonId: Int) -> Unit) {
+    fun onClick(sermon: Sermon) = clickListener(sermon.id)
 }
