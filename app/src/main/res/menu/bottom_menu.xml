@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/home"
-        android:title="home"
-        android:icon="@drawable/ic_home_black_24dp"
-        />
-    <item
-        android:title="sermons"
-        android:id="@+id/sermons"
-        android:icon="@drawable/ic_insert_drive_file_black_24dp"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
 
 </menu>

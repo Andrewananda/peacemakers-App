@@ -9,25 +9,30 @@
             type="com.example.peacemakers.viewmodels.SermonViewModel" />
     </data>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".views.MainActivity">
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sermon_recyclerview"
             android:background="@color/gray"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            tools:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
-        <ImageView
-            android:id="@+id/image_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:ApiStatus="@{viewmodel.status}"
-            android:contentDescription="Description" />
 
+        <ImageView
+            android:layout_width="197dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            app:ApiStatus="@{viewmodel.status}" />
     </LinearLayout>
+        <include layout="@layout/bottom_nav"/>
+    </RelativeLayout>
+
 </layout>

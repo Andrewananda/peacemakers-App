@@ -27,11 +27,9 @@ class SermonRepository {
         try {
             //Animate loading while data is still loading
             _status.value = SermonStatus.LOADING
-            Timber.i("LOADING STATUS")
             var result = getDeferred.await()
             //Display data
             _status.value = SermonStatus.DONE
-            Timber.i("DONE STATUS")
             _sermonresponse.value = result
 
         }catch (t:Throwable){

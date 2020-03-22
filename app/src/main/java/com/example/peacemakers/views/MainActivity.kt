@@ -44,6 +44,5 @@ private lateinit var viewmodel:SermonViewModel
                 adapter.submitList(it)
             }
         })
-
     }
 }
