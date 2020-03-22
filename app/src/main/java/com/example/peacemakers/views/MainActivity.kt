@@ -32,7 +32,10 @@ private lateinit var viewmodel:SermonViewModel
 
 
         val adapter = SermonAdapter(SermonClickListener {
-            sermon -> viewmodel.navigateToSelectedSermon(sermon)
+            val detailsIntent = Intent(this,DetailSermon::class.java).apply {
+                putExtra(SERMON_PARCEL,it)
+            }
+            startActivity(detailsIntent)
         })
 
         binding.sermonRecyclerview.adapter = adapter

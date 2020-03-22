@@ -44,6 +44,6 @@ class SermonAdapter(val clickListener:SermonClickListener) : ListAdapter<Sermon,
 
 }
 
-class SermonClickListener(val clickListener: (sermonId: Int) -> Unit) {
-    fun onClick(sermon: Sermon) = clickListener(sermon.id)
+class SermonClickListener(val clickListener: (sermon: Sermon) -> Unit) {
+    fun onClick(sermon: Sermon) = clickListener(sermon)
 }

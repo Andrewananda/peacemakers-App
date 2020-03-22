@@ -15,10 +15,6 @@ import timber.log.Timber
 class SermonViewModel : ViewModel() {
     //initialize sermonRepository
     private val sermonRepository:SermonRepository = SermonRepository()
-    //Navigate to selected Sermon
-    private val _navigateToSelectedSermon = MutableLiveData<Int>()
-    val navigateToSelectedSermon : LiveData<Int>
-    get() = _navigateToSelectedSermon
     //get Response from api
     val response: LiveData<List<Sermon>>
     //get Status
@@ -43,11 +39,4 @@ class SermonViewModel : ViewModel() {
         job.cancel()
     }
 
-    fun navigateToSelectedSermon(sermonId:Int){
-        _navigateToSelectedSermon.value = sermonId
-    }
-
-    fun displaySermonDetailComplete() {
-        _navigateToSelectedSermon.value = null
-    }
 }
