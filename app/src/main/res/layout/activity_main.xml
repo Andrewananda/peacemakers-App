@@ -8,10 +8,10 @@
             name="viewmodel"
             type="com.example.peacemakers.viewmodels.SermonViewModel" />
     </data>
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        >
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -28,11 +28,11 @@
 
         <ImageView
             android:layout_width="197dp"
-            android:layout_height="400dp"
+            android:layout_height="300dp"
             android:layout_gravity="center"
             app:ApiStatus="@{viewmodel.status}" />
+        <include layout="@layout/bottom_nav"/>
     </LinearLayout>
         <include layout="@layout/bottom_nav"/>
     </RelativeLayout>
-
 </layout>
