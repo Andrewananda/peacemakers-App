@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.peacemakers">
+    package="com.example.peacemakers" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,13 +11,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".views.DetailSermon"></activity>
+        android:theme="@style/AppTheme" >
+
+        <activity android:name=".views.DetailSermon" />
         <activity android:name=".views.ApplicationController" />
         <activity android:name=".views.MainActivity" />
         <activity
             android:name=".views.SplashScreen"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
